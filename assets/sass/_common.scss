@@ -1,0 +1,275 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: $primaryFont;
+  font-weight: 700;
+}
+h5,
+h6 {
+  font-family: $primaryFont;
+  font-weight: 600;
+}
+p {
+  font-family: $secoundryFont;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+p,
+span,
+small {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+body {
+  font-family: $primaryFont;
+  overflow-x: hidden;
+}
+// common heading start
+.heading {
+  h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    color: $TextColor;
+    text-align: center;
+  }
+}
+// common heading end
+
+// common product style start
+%product_style {
+  position: relative;
+  border: 1px solid $bgColor;
+  overflow: hidden;
+  .slider_item_img img:last-child {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  &:hover .slider_item_img img:last-child {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .product_info ins {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: $ParagraphColor;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  .product_info del {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #bdbdbd;
+  }
+  .product_info h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $TextColor;
+    transition: 0.5s;
+    &:hover {
+      color: $praimaryColor;
+    }
+  }
+  .faStar {
+    font-size: 10px;
+    color: $praimaryColor;
+  }
+  .product_badge_overlay {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    background: $praimaryColor;
+    transform: rotate(-90deg);
+    padding: 8px;
+    width: 70px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    opacity: 999;
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: $lightColor;
+    }
+  }
+  .product_icon_overlay {
+    position: absolute;
+    top: 39px;
+    right: -50px;
+    transition: 0.5s;
+    ul li a {
+      // position: absolute;
+      display: inline-block;
+      font-size: 16px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      color: $PrimaryColor3;
+      background-color: $lightColor;
+      border-radius: 50%;
+      margin: 5px 0;
+      transition: 0.5s;
+      box-shadow: $shadow1;
+      &:hover {
+        color: $lightColor;
+        background: $praimaryColor;
+        box-shadow: none;
+      }
+      .custom-tooltip {
+        background: red;
+      }
+    }
+  }
+  &:hover .product_icon_overlay {
+    right: 17px;
+  }
+}
+
+// common product style end
+
+// common button style start
+.anchor {
+  text-align: center;
+  a {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: $lightColor;
+    background: $praimaryColor;
+    padding: 13px 27px;
+    transition: 0.5s;
+    &:hover {
+      background: $blackColor;
+    }
+  }
+}
+// common button style end
+
+// common play button start
+.play-icon {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: $lightColor;
+  color: $praimaryColor;
+  font-size: 20px;
+  transition: 0.5s;
+  animation: animate-btn 2s infinite linear;
+  &:hover {
+    background-color: $praimaryColor;
+    color: $lightColor;
+  }
+}
+@keyframes animate-btn {
+  0% {
+    box-shadow: 0px 0px 0px 0px #fff4, 0px 0px 0px 0px #fff4;
+  }
+  70% {
+    box-shadow: 0px 0px 0px 10px #fff4, 0px 0px 0px 20px #fff4;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 10px #fff4, 0px 0px 0px 20px #fff4;
+  }
+}
+// common play button end
+
+// common banner hover effect start
+#offer {
+  position: relative;
+  overflow: hidden;
+  ::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 3;
+    top: 0;
+    right: 51%;
+    bottom: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skew(45deg);
+  }
+  &:hover ::before {
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 900ms linear;
+  }
+}
+// common hover banner effect end
+
+// common product hover effcet start
+.mega-hover {
+  position: relative;
+  overflow: hidden;
+  ::after,
+  ::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 3;
+  }
+  ::before {
+    top: 0;
+    right: 51%;
+    bottom: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  ::after {
+    top: 50%;
+    right: 0;
+    bottom: 50%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  &:hover ::before {
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 900ms linear;
+  }
+  &:hover ::after {
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 900ms linear;
+  }
+}
+
+// common product hover effcet end
